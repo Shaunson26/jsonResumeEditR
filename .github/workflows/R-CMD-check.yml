@@ -1,0 +1,49 @@
+# The name of the workflow as it will appear in the "Actions" tab of the GitHub repository
+name: R-CMD-check
+
+# The trigger for this workflow - any push event (every time someone pushes a change to the
+# repository or merges a pull request. This is triggered by a push to every branch
+on: push
+
+# A workflow run is made up of one or more jobs, which run in parallel by default.
+jobs:
+  main:
+    # Name of job. See matrix strategy section for details
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+    # Each job runs in a runner environment specified by runs-on.
+    runs-on: ${{ matrix.config.os }}
+    # time out
+    timeout-minutes: 30
+    # A matrix strategy lets you use variables in a single job definition to automatically
+    # create multiple job runs that are based on the combinations of the variables.
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+        #- {os: macOS-latest,   r: 'release'}
+        - {os: windows-latest, r: 'release'}
+        #- {os: ubuntu-22.04, r: 'devel'}
+        #- {os: ubuntu-22.04, r: 'release'}
+        #- {os: ubuntu-22.04, r: 'oldrel'}
+    # Actions
+    # These can be found in the Marketplace, or on github
+    # r-lib - See https://github.com/r-lib/actions/tree/master/examples#readme for
+    # additional example workflows available for the R community.
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2.5.0
+
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: ${{ matrix.config.r }}
+
+      - name: Install R package dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+
+      - name: R CMD check
+        if: always()
+        uses: r-lib/actions/check-r-package@v2
