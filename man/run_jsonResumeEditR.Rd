@@ -4,10 +4,10 @@
 \alias{run_jsonResumeEditR}
 \title{Run jsonResumeEditR}
 \usage{
-run_jsonResumeEditR(test = FALSE)
+run_jsonResumeEditR(testDir = FALSE)
 }
 \arguments{
-\item{test}{logical, whether skip running the app. Used in testing.}
+\item{testDir}{logical, test whether function can find the app directory and skip starting the app. Used in testing.}
 }
 \description{
 Run jsonResumeEditR shipped with the R package
