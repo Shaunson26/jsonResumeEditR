@@ -40,6 +40,10 @@ test_that("mod_basics collects and outputs user inputs", {
 
 test_that("mod_basics updates user inputs", {
 
+  suppressWarnings(
+    shinytest2::load_app_env()
+  )
+
   shiny_app <-
     shinyApp(ui = fluidPage(tabsetPanel(tabPanel_basics(id = 'basics'))),
              server = function(input, output, session) {
@@ -97,6 +101,10 @@ test_that("mod_basics updates user inputs", {
 })
 
 test_that("mod_basics clears user inputs", {
+
+  suppressWarnings(
+    shinytest2::load_app_env()
+  )
 
   shiny_app <-
     shinyApp(ui = fluidPage(tabsetPanel(tabPanel_basics(id = 'basics'))),

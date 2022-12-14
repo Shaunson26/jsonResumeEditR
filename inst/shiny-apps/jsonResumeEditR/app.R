@@ -22,12 +22,15 @@ ui <-
     ),
 
     tabsetPanel(
-      tabPanel_basics(id = 'basics')
+      tabPanel_basics(id = 'basics'),
+      tabPanel_profiles(id = 'profiles')
     )
   )
 
 server <-
   function(input, output, session) {
+
+    mod_profiles('profiles')
 
     # Import JSON logic ----
     observe({
