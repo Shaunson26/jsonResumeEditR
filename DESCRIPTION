@@ -10,8 +10,11 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Imports: 
+    glue,
+    htmltools,
     jsonlite,
     magrittr,
+    R6,
     shiny
 Config/testthat/edition: 3
 Suggests: 
