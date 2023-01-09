@@ -19,11 +19,14 @@ profiles_extender <-
 
   },
   value_extractor = function(values){
-    with(values,
-         list(network = network,
-              username = username,
-              url = url
-         )
-    )
+    with(values,{
+
+      out_list <-
+        list(network = network,
+             username = username,
+             url = url)
+
+      remove_empty_inputs(out_list)
+    })
   }
   )

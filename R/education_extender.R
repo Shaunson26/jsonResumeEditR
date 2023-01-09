@@ -24,16 +24,20 @@ education_extender <-
 
     },
     value_extractor = function(values){
-      with(values,
-           list(institution = institution,
-                url = url,
-                area = area,
-                studyType = studyType,
-                startDate = startDate,
-                endDate = startDate,
-                score = score,
-                courses = strsplit(courses, '\n')[[1]]
-           )
-      )
+
+      out_list <-
+        with(values,
+             list(institution = institution,
+                  url = url,
+                  area = area,
+                  studyType = studyType,
+                  startDate = startDate,
+                  endDate = startDate,
+                  score = score,
+                  courses = strsplit(courses, '\n')[[1]]
+             )
+        )
+
+      remove_empty_inputs(out_list)
     }
   )

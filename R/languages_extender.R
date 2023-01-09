@@ -20,10 +20,14 @@ languages_extender <-
     )
   },
   value_extractor = function(values){
-    with(values,
-         list(language = language,
-              fluency = fluency
-         )
-    )
+
+    out_list <-
+      with(values,
+           list(language = language,
+                fluency = fluency
+           )
+      )
+
+    remove_empty_inputs(out_list)
   }
   )

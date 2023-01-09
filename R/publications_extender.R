@@ -20,13 +20,17 @@ publications_extender <-
       )
     },
     value_extractor = function(values){
-      with(values,
-           list(name = name,
-                publisher = publisher,
-                releaseDate = releaseDate,
-                url = url,
-                summary = summary
-           )
-      )
+
+      out_list <-
+        with(values,
+             list(name = name,
+                  publisher = publisher,
+                  releaseDate = releaseDate,
+                  url = url,
+                  summary = summary
+             )
+        )
+
+      remove_empty_inputs(out_list)
     }
   )

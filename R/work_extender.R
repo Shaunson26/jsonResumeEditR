@@ -36,15 +36,21 @@ work_extender <-
     }
     ,
     value_extractor = function(values){
-      with(values,
-           list(name = name,
-                position = position,
-                url = url,
-                startDate = startDate,
-                endDate = endDate,
-                summary = summary,
-                highlights = strsplit(highlights, '\n')[[1]]
-           )
+      with(values,{
+
+        out_list <-
+          list(name = name,
+               position = position,
+               url = url,
+               startDate = startDate,
+               endDate = endDate,
+               summary = summary,
+               highlights = strsplit(highlights, '\n')[[1]]
+          )
+
+        remove_empty_inputs(out_list)
+
+      }
       )
     }
   )

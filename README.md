@@ -4,6 +4,11 @@
 # jsonResumeEditR
 
 <!-- badges: start -->
+
+![GitHub R package
+version](https://img.shields.io/github/r-package/v/shaunson26/jsonResumeEditR)
+[![R-CMD-check](https://github.com/Shaunson26/jsonResumeEditR/actions/workflows/R-CMD-check.yml/badge.svg)](https://github.com/Shaunson26/jsonResumeEditR/actions/workflows/R-CMD-check.yml)
+
 <!-- badges: end -->
 
 The goal of jsonResumeEditR is to create and maintain a [JSON
@@ -17,6 +22,8 @@ The app should be able to:
 - Allow user to edit fields within the JSON schema using text inputs
 - Export to JSON
 - Import a JSON resume with the edit fields completed
+- TODO: Send JSON to a user Github gist for <https://jsonresume.org/>
+  hosting
 
 ## Installation
 
@@ -37,3 +44,5 @@ library(jsonResumeEditR)
 
 run_jsonResumeEditR()
 ```
+
+![screenshot](man/figures/screenshot.gif)

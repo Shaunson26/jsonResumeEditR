@@ -22,14 +22,19 @@ volunteer_extender <-
 
   },
   value_extractor = function(values){
-    with(values,
-         list(organization = organization,
-              position = position,
-              url = url,
-              startDate = startDate,
-              endDate = startDate,
-              summary = summary,
-              highlights = strsplit(highlights, '\n')[[1]]
-         )
-    )
-})
+
+    out_list <-
+      with(values,
+           list(organization = organization,
+                position = position,
+                url = url,
+                startDate = startDate,
+                endDate = startDate,
+                summary = summary,
+                highlights = strsplit(highlights, '\n')[[1]]
+           )
+      )
+
+    remove_empty_inputs(out_list)
+
+  })

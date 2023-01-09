@@ -20,10 +20,14 @@ references_extender <-
     )
   },
   value_extractor = function(values){
-    with(values,
-         list(name = name,
-              reference = reference
-         )
-    )
+
+    out_list <-
+      with(values,
+           list(name = name,
+                reference = reference
+           )
+      )
+
+    remove_empty_inputs(out_list)
   }
   )
