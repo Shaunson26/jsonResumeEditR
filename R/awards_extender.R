@@ -20,12 +20,16 @@ awards_extender <-
 
     },
     value_extractor = function(values){
-      with(values,
-           list(title = title,
-                date = date,
-                awarder = awarder,
-                summary = summary
-           )
-      )
+
+      out_list <-
+        with(values,
+             list(title = title,
+                  date = date,
+                  awarder = awarder,
+                  summary = summary
+             )
+        )
+
+      remove_empty_inputs(out_list)
     }
   )

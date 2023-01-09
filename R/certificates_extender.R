@@ -19,12 +19,15 @@ certificates_extender <-
 
   },
   value_extractor = function(values){
-    with(values,
-         list(name = name,
-              date = date,
-              issuer = issuer,
-              url = url
-         )
-    )
+    out_list <-
+      with(values,
+           list(name = name,
+                date = date,
+                issuer = issuer,
+                url = url
+           )
+      )
+
+    remove_empty_inputs(out_list)
   }
   )

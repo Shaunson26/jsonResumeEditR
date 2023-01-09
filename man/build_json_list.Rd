@@ -15,5 +15,13 @@ build_json_list(form_data, sections)
 list
 }
 \description{
+getFormData() returns a named list of values e.g. \verb{$basics-name-1}, \verb{$profiles-network-2}.
+The prefix is used to segregate sections (e.g. basics vs work), while the suffix used to group
+related sub-sections (e.g. multiple work inputs). If there are empty sections, then their
+return values will be "".
+
+Each section object has methods to select the relevant values and wrangle them
+}
+\details{
 Build a list ready for JSON parsing
 }

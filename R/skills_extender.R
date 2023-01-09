@@ -26,11 +26,15 @@ skills_extender <-
     )
   },
   value_extractor = function(values){
-    with(values,
-         list(name = name,
-              level = level,
-              keywords = strsplit(keywords, '\n')[[1]]
-         )
-    )
+
+    out_list <-
+      with(values,
+           list(name = name,
+                level = level,
+                keywords = strsplit(keywords, '\n')[[1]]
+           )
+      )
+
+    remove_empty_inputs(out_list)
   }
   )

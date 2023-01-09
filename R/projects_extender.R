@@ -45,18 +45,22 @@ projects_extender <-
     )
   },
   value_extractor = function(values){
-    with(values,
-         list(name = name,
-              description = description,
-              highlights = strsplit(highlights, split = '\n'),
-              keywords = strsplit(keywords, split = '\n'),
-              startDate = startDate,
-              endDate = endDate,
-              url = url,
-              roles = strsplit(roles, split = '\n'),
-              entity = entity,
-              type = type
-         )
-    )
+
+    out_list <-
+      with(values,
+           list(name = name,
+                description = description,
+                highlights = strsplit(highlights, split = '\n')[[1]],
+                keywords = strsplit(keywords, split = '\n')[[1]],
+                startDate = startDate,
+                endDate = endDate,
+                url = url,
+                roles = strsplit(roles, split = '\n')[[1]],
+                entity = entity,
+                type = type
+           )
+      )
+
+    remove_empty_inputs(out_list)
   }
   )

@@ -169,6 +169,10 @@ json_section <- R6::R6Class(
         values_list <-  values_list[[1]]
       }
 
+      if (length(values_list) == 0){
+        values_list <- NULL
+      }
+
       values_list
 
     },
