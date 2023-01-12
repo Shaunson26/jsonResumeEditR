@@ -9,7 +9,7 @@
 #' @export
 date_input <- function(id, label, value = NULL) {
   htmltools::tags$div(
-    class = 'jr-input-container',
+    class = 'form-group shiny-input-container',
     htmltools::tags$label(`for` = id, label),
     htmltools::tags$input(
       type = "date",

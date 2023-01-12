@@ -7,7 +7,7 @@
 #' @export
 run_jsonResumeEditR <- function(testDir = FALSE) {
 
-  appDir <- system.file("shiny-apps", "jsonResumeEditR", package = "jsonResumeEditR")
+  appDir <- system.file("jsonResumeEditR", package = "jsonResumeEditR")
 
   if (appDir == "") {
     stop("Could not find example directory. Try re-installing `jsonResumeEditR`.", call. = FALSE)
