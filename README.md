@@ -19,20 +19,28 @@ function `run_jsonResumeEditR()` (see below).
 
 The app should be able to:
 
-- Allow user to edit fields within the JSON schema using text inputs
+- Allow user to edit fields within the JSON schema using inputs
 - Export to JSON
-- Import a JSON resume with the edit fields completed
+- Import a JSON resume
+- Clear fields
+- TODO: Preview using a template builder
 - TODO: Send JSON to a user Github gist for <https://jsonresume.org/>
   hosting
 
-## Installation
+## Getting started
+
+This project uses R and R Shiny. You will need first need R installed,
+so install if you do not yet have it.
+
+### R packages
 
 You can install the development version of jsonResumeEditR from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/) (and dependencies from CRAN)
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Shaunson26/jsonResumeEditR")
+# install jsonResumeEditR with dependencies in DESCRIPTION file
+devtools::install_github("Shaunson26/jsonResumeEditR", dependencies = TRUE)
 ```
 
 ## Start the app

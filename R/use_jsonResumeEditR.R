@@ -7,13 +7,12 @@ use_jsonResumeEditR <- function(){
 
   htmltools::htmlDependency(
     name = "jsonResumeEditR",
-    version = "2022.12.20",
-    src = "shiny-apps/jsonResumeEditR/assets",
-    script = c("javascript/clearFormData.js",
-               "javascript/deleteInputGroup.js",
-               "javascript/getFormData.js"),
-    # stylesheet = c('css/fonts.css',
-    #                'css/styles.css'),
+    version = "2023-01-11",
+    src = "www",
+    script = c("jquery-ui.min.js",
+               "repeatableFields.js",
+               "jsonResumeEditR.js"),
+    #stylesheet = c('fonts.css', 'styles.css'),
     package = "jsonResumeEditR")
 
 }
