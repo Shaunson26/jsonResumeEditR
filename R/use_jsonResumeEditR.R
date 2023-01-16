@@ -7,7 +7,7 @@ use_jsonResumeEditR <- function(){
 
   htmltools::htmlDependency(
     name = "jsonResumeEditR",
-    version = "2023-01-11",
+    version = "2023-01-16",
     src = "www",
     script = c("jquery-ui.min.js",
                "repeatableFields.js",

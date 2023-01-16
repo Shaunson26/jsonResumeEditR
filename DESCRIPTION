@@ -1,11 +1,11 @@
 Package: jsonResumeEditR
 Title: R Shiny App To Edit A JSON Resume
-Version: 2023.01.09
+Version: 2023.01.16
 Authors@R: 
     person("Shaun", "Nielsen", , "first.last@example.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: An R Shiny app to create, edit and maintain an JSON Resume.
-License: MIT + file LICENSE
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
