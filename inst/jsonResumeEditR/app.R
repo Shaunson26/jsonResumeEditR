@@ -31,8 +31,8 @@ ui <-
         exportFormMenuItem('getFormData', 'Export'),
         fileInputMenuItem('import', 'Import'),
         clearFormMenuItem('clear', 'Clear form'),
-        hr(style = 'width: 75%; margin: 20px auto;'),
-        menuItem('About', tabName = 'about', icon = icon("fas fa-circle-info"))
+        h3('Preview', class = 'h3-menu'),
+        menuItem('TODO', tabName ='TODO')
       )
     ),
     dashboardBody(
@@ -40,7 +40,8 @@ ui <-
       shinyjs::useShinyjs(),
       includeCSS(system.file(package = 'jsonResumeEditR', 'www/styles.css')),
       tabItems(
-        tabItem(tabName = "home", p('A simple JSON resume editor using R Shiny.')),
+        tabItem(tabName = "home", home_page()
+        ),
         tabItem(tabName = 'basics',
                 section_container(
                   h3('Basics'), basics_inputs(),
@@ -89,8 +90,7 @@ ui <-
         tabItem('Projects',
                 section_container(
                   h3('Projects'), make_repeatable('projects', projects_inputs()))
-        ),
-        tabItem(tabName = "about", p('Why I did this?'))
+        )
       ),
       wrap_repeatable_fields()
     )
