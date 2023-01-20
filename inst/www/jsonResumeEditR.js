@@ -1,3 +1,19 @@
+  /**
+ * Return element ID to shiny input 'themePreview'
+ *
+ * Used to trigger template previews
+ *
+ * @return A Shiny input 'themePreview' with a named list
+ */
+ function returnThemeName(element){
+
+   message = {
+     id: element.id
+   };
+
+  Shiny.onInputChange('themePreview', message);
+ }
+
  /**
  * Extract values from inputs on page
  *
