@@ -32,7 +32,7 @@ ui <-
         fileInputMenuItem('import', 'Import'),
         clearFormMenuItem('clear', 'Clear form'),
         h3('Preview', class = 'h3-menu'),
-        menuItem('TODO', tabName ='TODO')
+        menuItem('Templates', tabName ='Templates')
       )
     ),
     dashboardBody(
@@ -90,6 +90,17 @@ ui <-
         tabItem('Projects',
                 section_container(
                   h3('Projects'), make_repeatable('projects', projects_inputs()))
+        ),
+        tabItem('Templates',
+                fluidRow(
+                  p('Eventually the JSON data will populate these ...')
+                ),
+                fluidRow(style = 'max-width: 1200px;',
+                         theme_cards_ui()
+                ),
+                fluidRow(style = "margin-top: 32px;",
+                         theme_preview_iframe()
+                )
         )
       ),
       wrap_repeatable_fields()
@@ -98,6 +109,34 @@ ui <-
 
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
+
+  #usr_id = paste(sample(c(letters, LETTERS, 0:9), size = 16, replace = TRUE), collapse = '')
+  template_folder_name = 'template-preview'
+  template_folder_path <- file.path('www', template_folder_name)
+
+  observe({
+    # TODO use input field/json
+    # Render JSON
+    # Build template
+    theme_chosen <- input$themePreview$id
+    file_location <- system.file(package = 'jsonResumeEditR', 'themes', theme_chosen)
+    # create/check/delete
+    dir.create(template_folder_path, showWarnings = FALSE)
+    files_dir_to_remove <- list.files(template_folder_path, full.names = T, recursive = T)
+    file.remove(files_dir_to_remove)
+    file.copy(list.files(file_location, full.names = T), template_folder_path, recursive = TRUE)
+    # TODO Fill template
+
+    # Show/hide
+    fadeOut_complete_fn <-
+      sprintf("$('#template-preview').attr('src', '%s/template.html').parent().fadeIn(400);", template_folder_name)
+
+    shinyjs::runjs(
+      sprintf("$('#template-preview').attr('src','').parent().fadeOut(200, function() { %s });", fadeOut_complete_fn)
+
+    )
+  }) %>%
+    bindEvent(input$themePreview)
 
   import <-
     reactive({

@@ -2,38 +2,139 @@
   "basics": {
     "name": "John Doe",
     "label": "Programmer",
-    "image": "",
+    "image": "https://www.w3schools.com/w3images/avatar6.png",
     "email": "john@gmail.com",
     "phone": "(912) 555-4321",
     "url": "https://johndoe.com",
-    "summary": "A summary of John Doe…",
+    "summary": "I have 20+ years software development in various languages on various platforms. I work strictly in C and C++ when developing new applications and software tools or modifying/enhancing existing ones. I also work in the Microsoft .NET platform using C# and ASP. Having worked in and seen every type of team, I have experience in leading a team, effectively communicating issues, overcoming challenges and delivering results.",
     "location": {
       "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
       "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "region": "California",
+      "postalCode": "CA 94115",
+      "countryCode": "US"
     },
-    "profiles": [{
-      "network": "Twitter",
-      "username": "john",
-      "url": "https://twitter.com/john"
-    },
-     {
-      "network": "Twatter",
-      "username": "Jim",
-      "url": "https://twatter.com/Jim"
-    }]
-  },
-  "work": [{
-    "name": "Company",
-    "position": "President",
-    "url": "https://company.com",
-    "startDate": "2013-01-01",
-    "endDate": "2014-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Started the company"
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "john",
+        "url": "https://twitter.com/john"
+      },
+      {
+        "network": "Github",
+        "username": "john",
+        "url": "https://github/john"
+      }
     ]
-  }]
+  },
+  "work": [
+    {
+      "name": "Bryan Foreman and Associates",
+      "position": "Managing Consultant",
+      "url": "https://microsoft.com",
+      "startDate": "2019-01-02",
+      "summary": "Provide consulting services to business partners and customers who want to use enterprise technologies to become true digital businesses",
+      "highlights": ["Provide expert consulting services in Microsoft Azure to clients from Fortune 100 to small business.", "Provide consulting services to partners using Azure Stack."]
+    },
+    {
+      "name": "Microsoft",
+      "position": "Senoir Consultant",
+      "url": "https://microsoft.com",
+      "startDate": "2018-01-01",
+      "endDate": "2019-01-01",
+      "summary": "Provided technical leadership for global customers, with a focus on large enterprise deployments and migration projects.",
+      "highlights": ["Conducted large-scale technical demonstrations for industry customers (GE, IBM, and NASA) featuring cloud-based solutions and interoperability between Microsoft Azure and multiple partners", "Worked very hard"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Engineering",
+      "url": "https://institution.com/",
+      "area": "Software Engineering",
+      "studyType": "Masters",
+      "startDate": "2015-01-01",
+      "endDate": "2016-01-01",
+      "courses": [""]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "name": "Devops",
+      "level": "Master",
+      "keywords": ["AWS", "Azure", "GCloud"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Contact Available Upon Request",
+      "reference": "I had the opportunity to work with Charles on a team that created a technology that was used to encrypt data produced by ATM and POS terminals. It was an extremely difficult task requiring detailed knowledge of VPN technology and hardware and software encryption. It included various protocols including Supervised Internet and SSL.We completed the task within a time frame that had never been done before, and we had to create the infrastructure to test the solution before final implementation. This team was a difficult assignment, and Charles was its most valuable member.He is very detail oriented, conscientious and a team player who is capable of coping well with frequent interruptions."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project",
+      "description": "Description…",
+      "highlights": ["Won award at AIHacks 2016"],
+      "keywords": ["HTML"],
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "url": "https://project.com/",
+      "roles": ["Team Lead"],
+      "entity": "Entity",
+      "type": "application"
+    }
+  ]
 }
