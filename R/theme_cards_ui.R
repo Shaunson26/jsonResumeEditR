@@ -21,23 +21,22 @@ theme_cards_ui <- function() {
         sprintf('www/%s.jpg', author_info$theme_name)
       )
 
-      column(3, style = 'margin-bottom: 16px;',
-             div(
-               class = 'section-container',
-               div(style = "display: flex; flex-direction: column; gap: 8px; justify-content: center; overflow: hidden;",
-                   img(src = sprintf('%s.jpg', author_info$theme_name),
-                       style = "height:130px; object-fit: contain;"),
-                   div(style='text-align: center;',
-                     p(author_info$theme_name, style = 'font-weight: bold;'),
-                     p('by ', a(href = author_info$url, author_info$name))
+      div(class = 'col-md-3 col-sm-4', style = 'margin-bottom: 16px;',
+             div(class = 'section-container',
+                 fluidRow(style='text-align: center;',
+                   div(class = 'col-md-12 col-sm-12 col-xs-4', style = 'margin-bottom: 8px; min-width: 150px;overflow:hidden;',
+                     img(src = sprintf('%s.jpg', author_info$theme_name), style = "height:130px; object-fit: contain;")
                    ),
-                   a('Preview theme', id = basename(file_path), class = 'btn btn-add', onclick = 'returnThemeName(this)')
-               )
+                   div(class = 'col-md-12 col-sm-12 col-xs-6', style = 'line-height: 0.7;',
+                       p(author_info$theme_name, style = 'font-weight: bold;'),
+                       p('by ', a(href = author_info$url, author_info$name)),
+                       a('Preview theme', id = basename(file_path), class = 'btn btn-add', onclick = 'returnThemeName(this)')
+                   )
+                 )
              )
       )
-
     })
 
-  shiny::tagList(theme_cards)
+  shiny::tagList(theme_cards[c(1,2,1,2,1)])
 
 }
