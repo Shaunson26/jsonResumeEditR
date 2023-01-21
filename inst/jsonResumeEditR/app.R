@@ -95,10 +95,10 @@ ui <-
                 fluidRow(
                   p('Eventually the JSON data will populate these ...')
                 ),
-                fluidRow(style = 'max-width: 1200px;',
+                fixedRow(id = 'cards-container', style = 'max-width: 1170px;',
                          theme_cards_ui()
                 ),
-                fluidRow(style = "margin-top: 32px;",
+                fluidRow(style = "margin-top: 16px;",
                          theme_preview_iframe()
                 )
         )
